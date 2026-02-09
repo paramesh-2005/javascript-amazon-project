@@ -19,5 +19,5 @@ let  deliveryOption;
         deliveryOption = option;
       }
       });
-  return deliveryOption || deliveryOptions [0];
+  return deliveryOption || deliveryOptions[0];
 }
