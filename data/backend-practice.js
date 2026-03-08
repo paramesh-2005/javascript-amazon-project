@@ -5,7 +5,7 @@ xhr.addEventListener('load', () => {
 });
 
 xhr.open('GET', 'https://supersimplebackend.dev/hello');
-xhr.send();
+xhr.send(); // Asynchronous: Send the Request but it does not wait for the response to comeback.
 
 // A backend only supports a certain set of URL paths
 // If we send a request to URL path that is not supported, the backend will respond with an error
