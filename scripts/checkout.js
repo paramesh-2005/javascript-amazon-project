@@ -6,6 +6,23 @@ import { loadCart } from "../data/cart.js";
 // import '../data/cart-class.js';
 // import '../data/backend-practice.js';
 
+async function loadpage() { 
+
+  await loadProductsFetch();
+
+  await new Promise((resolve) => {
+    loadCart(() => {
+      resolve();
+    });
+  });
+
+  renderOrderSummary();
+  renderPaymentSummary();
+
+}
+loadpage();
+
+/*
 Promise.all([
   loadProductsFetch(),
   new Promise((resolve) => {
@@ -25,7 +42,7 @@ loadProducts(() => {
   renderOrderSummary();
   renderPaymentSummary();
 }); // Anonymous Function: Function without a name
-
+*/
 /*
 Promises:
 - better way to handle asynchronous code
@@ -44,3 +61,12 @@ resolve is a function
 
 // Multiple callbacks cause a lot of nesting
 // Nesting means code inside a code
+
+/*
+async = makes a fuunction return a promise
+feature:
+- ley us use await
+- await = lets us wait for a promise to finish before going to the next line.
+- let us write aynchronous code like a normal code
+- only use inside a asycn function
+*/
